@@ -1,14 +1,14 @@
 // document.writeln("<span>12345 Вышел завйчик погулять!</span>");
 
-const $ = document.querySelector;
+import insert2Body from './utils';
 
-// "Молодёжный" способ
-$('body').innerHTML += '<span>12345 Вышел зайчик погулять!</span>';
+const { a: a1, b: { q }, c } = { a: 1, b: { q: 6, w: 9 }, c: 3 };
 
-// "Классический" способ:
-// const htmlSpanElement = document.createElement("span");
-// htmlSpanElement.appendChild(document.createTextNode("12345 Вышел зайчик погулять!"));
-// document.body.appendChild(htmlSpanElement);
+console.log(a1); // 1
+console.log(c); // 2
+console.log(q); // 2
+
+insert2Body('12345 Вышел зайчик погулять!');
 
 const z = 56;
 
@@ -21,4 +21,4 @@ const x = {
   },
 };
 
-// console.log(x);
+console.log(x);
