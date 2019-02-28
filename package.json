@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "require.js": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

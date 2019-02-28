@@ -11,3 +11,4 @@ parserOptions:
 rules:
   object-curly-spacing: off
   no-trailing-spaces: off
+  no-mixed-operators: off
