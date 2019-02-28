@@ -21,3 +21,5 @@ rules:
   nonblock-statement-body-position: off
   func-names: off
   no-unused-vars: warn
+  no-restricted-globals: off
+  no-alerts: off
