@@ -50,12 +50,20 @@ function toString(card) {
   return `${worth(card)} ${suit(card)}`;
 }
 
+function compare(player1Card, player2Card) {
+  const number = value(player1Card) - value(player2Card);
+  return Math.abs(number) === 8 ? -number : number;
+}
+
 export default function doDrunkard() {
   const shuffledCards = cards.shuffle();
 
   const {length} = shuffledCards;
   const player1Cards = shuffledCards.slice(0, length / 2);
   const player2Cards = shuffledCards.slice(length / 2);
+
+  console.log(player1Cards);
+  console.log(player2Cards);
 
   let winner;
   let count = 0;
@@ -69,15 +77,15 @@ export default function doDrunkard() {
     console.log(`Игрок №1 извлёк карту ${toString(player1Card)}`);
     console.log(`Игрок №2 извлёк карту ${toString(player2Card)}`);
 
-    const valuePlayer1Card = value(player1Card);
-    const valuePlayer2Card = value(player2Card);
-
-    if (valuePlayer1Card > valuePlayer2Card) {
-      player1Cards.unshift(player1Card, player2Card);
+    const compare1 = compare(player1Card, player2Card);
+    if (compare1 > 0) {
+      player1Cards.unshift(player1Card);
+      player1Cards.unshift(player2Card);
       winner = 1;
       console.log('Кон выиграл игрок №1');
-    } else if (valuePlayer2Card > valuePlayer1Card) {
-      player2Cards.unshift(player2Card, player1Card);
+    } else if (compare1 < 0) {
+      player2Cards.unshift(player2Card);
+      player2Cards.unshift(player1Card);
       winner = 2;
       console.log('Кон выиграл игрок №2');
     } else {
@@ -87,6 +95,8 @@ export default function doDrunkard() {
     }
 
     console.log(`У игрока №1 ${player1Cards.length} карт, а у игрока №2 ${player2Cards.length} карт`);
+    // console.log(player1Cards);
+    // console.log(player2Cards);
   } while (
     player1Cards.length !== 0
     && player2Cards.length !== 0
