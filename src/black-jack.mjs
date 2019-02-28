@@ -43,10 +43,11 @@ export default function doBlackJak() {
     player1Money -= BET;
     player2Money -= BET;
 
-    // todo
-
     const userPoints = getUserPoints();
     const computerPoints = getComputerPoints();
+
+    // todo
+
   } while (player1Money !== 0 && player2Money !== 0);
 
   return player1Money - player2Money;
