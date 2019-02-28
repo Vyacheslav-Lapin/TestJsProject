@@ -5,8 +5,8 @@ function rotateBarrel(index, force) {
   return VELOCITY * index * force % BARREL_ITEMS;
 }
 
-export default function slot() {
-// function slot() {
+export default function doSlot() {
+// function doSlot() {
   const force = Math.round(Math.random() * 1000);
   const barrel1 = rotateBarrel(1, force);
   const barrel2 = rotateBarrel(2, force);
@@ -17,4 +17,4 @@ export default function slot() {
   return barrel1 === barrel2 && barrel2 === barrel3;
 }
 
-// console.log(slot() ? 'Вы выиграли!' : 'Вы проиграли!');
+// console.log(doSlot() ? 'Вы выиграли!' : 'Вы проиграли!');

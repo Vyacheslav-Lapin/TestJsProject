@@ -12,3 +12,12 @@ rules:
   object-curly-spacing: off
   no-trailing-spaces: off
   no-mixed-operators: off
+  no-multi-spaces: off
+  indent: off
+  no-param-reassign: off
+  no-plusplus: off
+  no-extend-native: off
+  curly: off
+  nonblock-statement-body-position: off
+  func-names: off
+  no-unused-vars: warn

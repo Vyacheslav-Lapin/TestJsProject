@@ -7,17 +7,19 @@
   <meta content="ie=edge" http-equiv="X-UA-Compatible">
   <title>Document</title>
   <!--    <link rel="stylesheet" href="/123.css"/>-->
-<!--  <script defer="defer" src="/dist/bundle.js"></script>-->
+  <!--  <script defer="defer" src="/dist/bundle.js"></script>-->
 
-  <script src="./node_modules/require.js/require.js"></script>
+  <script type="module">
+    import doSlot from './src/slot.mjs';
+    import doDrunkard from './src/drunkard.mjs';
 
-  <script defer="defer" src="/dist/slot.js"></script>
-  <script defer="defer" src="/dist/index.js"></script>
-<!--  <script defer="defer" src="/src/slot.js"></script>-->
+    console.log('Играем в однорукого бандита: ', doSlot() ? 'Вы выиграли!' : 'Вы проиграли!');
+    console.log('Играем в пьяницу: ', doDrunkard() === 1 ? 'Вы выиграли!' : 'Вы проиграли!');
+
+  </script>
 
 </head>
 <body>
-
 
 
 </body>
