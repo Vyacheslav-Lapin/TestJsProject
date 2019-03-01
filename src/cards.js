@@ -1,4 +1,4 @@
-import {shuffle} from './utils.mjs';
+import {shuffle} from './utils.js';
 
 Array.prototype.shuffle = function () {
   return shuffle(this);
@@ -31,12 +31,12 @@ export default class Deck {
     return this.cards.shuffle();
   }
 
-  static value(card) {
+  static pip(card) {
     return card % COUNT_CARDS;
   }
 
   static worth(card) {
-    switch (Deck.value(card)) {
+    switch (Deck.pip(card)) {
     case 0:
       return 6;
     case 1:

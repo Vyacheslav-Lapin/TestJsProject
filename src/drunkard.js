@@ -1,7 +1,7 @@
-import Deck from "./cards.mjs";
+import Deck from './cards.js';
 
 function compare(player1Card, player2Card) {
-  const number = Deck.value(player1Card) - Deck.value(player2Card);
+  const number = Deck.pip(player1Card) - Deck.pip(player2Card);
   return Math.abs(number) === 8 ? -number : number;
 }
 

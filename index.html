@@ -10,11 +10,11 @@
   <!--  <script defer="defer" src="/dist/bundle.js"></script>-->
 
   <script type="module">
-    import doSlot from './src/slot.mjs';
-    import doDrunkard from './src/drunkard.mjs';
-    import doBlackJak from './src/black-jack.mjs';
+    import doSlot from './src/slot.js';
+    import doDrunkard from './src/drunkard.js';
+    import doBlackJak from './src/black-jack.js';
 
-    console.log('Сиграли в однорукого бандита: ', doSlot() ? 'Вы выиграли!' : 'Вы проиграли!');
+    console.log('Сыграли в однорукого бандита: ', doSlot() ? 'Вы выиграли!' : 'Вы проиграли!');
     console.log('Сыграли в пьяницу: ', doDrunkard() === 1 ? 'Вы выиграли!' : 'Вы проиграли!');
     console.log('Сыграли в очко (21-о): ', doBlackJak() > 0 ? 'Вы выиграли!' : 'Вы проиграли!');
 

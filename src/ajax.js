@@ -1,4 +1,6 @@
-function getPromise() {
+import to from './to.js';
+
+function getHttpResponse(url = 'localhost:8080/1', method = 'GET') {
   return new Promise((resolve, reject) => {
     const xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.onreadystatechange = () => {
@@ -10,25 +12,30 @@ function getPromise() {
         }
       }
     };
-    xmlHttpRequest.open('GET', 'localhost:8080/1');
+    xmlHttpRequest.open(method, url);
     xmlHttpRequest.send(null);
   });
 }
 
 async function show() {
-  const text = await getPromise();
-  const {id, price} = JSON.parse(text);
-  console.log(id + price);
+  const {err, text} = await to(getHttpResponse());
+  if (!err) {
+    const {id, price} = JSON.parse(text);
+    console.log(id + price);
+  } else {
+    const {status, message} = err;
+    console.log(`Status: ${status}, message: ${message}`);
+  }
 }
 
 show()
   .catch(reason => console.log(reason.status));
 
-// getPromise()
+// getHttpResponse()
 //   .then((text) => {
 //     const {id, price} = JSON.parse(text);
 //     return id + price;
-//   }).then(value => console.log(value))
+//   }).then(pip => console.log(pip))
 //   .catch(reason => console.log(reason.status));
 //
 // console.log('мама мыла раму');
