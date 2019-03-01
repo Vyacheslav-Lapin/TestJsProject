@@ -2,7 +2,7 @@
   "name": "testprj1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "karma start --single-run --no-auto-watch",
     "test:watch": "karma start",
@@ -24,7 +24,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "lodash": "^4.17.11",
-    "require.js": "^1.0.0"
+    "path": "^0.12.7",
+    "require.js": "^1.0.0",
+    "webpack-parts": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -59,6 +61,8 @@
     "nodemon": "^1.18.4",
     "rimraf": "^2.6.2",
     "terser-webpack-plugin": "1.1.0",
+    "tslint": "^5.13.1",
+    "typescript": "^3.3.3333",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-merge": "^4.2.1"

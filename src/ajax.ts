@@ -6,7 +6,7 @@ function getHttpResponse(url = 'localhost:8080/1', method = 'GET') {
     xmlHttpRequest.onreadystatechange = () => {
       if (xmlHttpRequest.readyState === 4) {
         if (xmlHttpRequest.status === 200) {
-          resolve(xmlHttpRequest.text);
+          resolve(xmlHttpRequest.responseText);
         } else {
           reject(xmlHttpRequest);
         }

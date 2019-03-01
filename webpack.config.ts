@@ -1,8 +1,12 @@
-const path = require('path');
-const merge = require('webpack-merge');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+import path from "path";
 
-const parts = require('./webpack.parts');
+import merge from "webpack-merge";
+
+import FriendlyErrorsPlugin from "friendly-errors-webpack-plugin";
+
+import parts from 'webpack-parts';
+
+import eslint_friendly_formatter from "eslint-friendly-formatter";
 
 const paths = {
   lib: path.join(__dirname, 'src'),
@@ -19,7 +23,7 @@ const lintJSOptions = {
   // Toggle autofix
   fix: true,
 
-  formatter: require('eslint-friendly-formatter')
+  formatter: eslint_friendly_formatter
 };
 
 const commonConfig = merge([
@@ -98,8 +102,8 @@ const libraryMinConfig = merge([
   })
 ]);
 
-module.exports = env => (
+export default env => (
   env === 'production'
     ? [libraryMinConfig, libraryConfig]
     : libraryConfig
-);
+)

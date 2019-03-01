@@ -1,4 +1,4 @@
-import Deck from './cards.js';
+import Deck from './cards.ts';
 
 function compare(player1Card, player2Card) {
   const number = Deck.pip(player1Card) - Deck.pip(player2Card);
